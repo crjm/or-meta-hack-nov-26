@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Empire Builder — Tiny City Tycoon</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header id="hud-top">
+      <div class="brand">🏰 Empire Builder</div>
+      <div class="stats">
+        <span id="status" class="status">connecting…</span>
+        <span>Stage <b id="stage">0</b></span>
+        <span>Players <b id="players">0</b></span>
+        <span id="latency"></span>
+      </div>
+      <div class="actions">
+        <button id="btn-qr">📱 Invite</button>
+        <button id="btn-quit" class="danger">✖ Abandon city</button>
+      </div>
+    </header>
+
+    <aside id="realm">
+      <h2>Your Realm</h2>
+      <div class="row"><span>Your rank</span><b id="my-rank">—</b></div>
+      <div class="row"><span>Cities alive</span><b id="realm-count">0</b></div>
+      <p class="hint">You can only see your own city.<br/>It grows randomly each stage.<br/>Close the page — or abandon — and it is destroyed.</p>
+    </aside>
+
+    <div id="qr-panel" class="hidden">
+      <h2>Scan to join</h2>
+      <img id="qr-img" width="180" height="180" alt="QR code to join the game" />
+      <div id="qr-url"></div>
+    </div>
+
+    <section id="my-city">
+      <h2 id="my-name">Your city</h2>
+      <div class="row"><span>Level</span><b id="my-level">1</b></div>
+      <div class="row"><span>Score</span><b id="my-score">0</b></div>
+      <div class="bar"><div id="my-progress"></div></div>
+      <div class="row"><span>Buildings</span><b id="my-buildings">manor</b></div>
+      <div id="my-decision" class="decision">Waiting for the first stage…</div>
+    </section>
+
+    <div id="banner">Connecting to the realm…</div>
+    <canvas id="scene"></canvas>
+  </div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

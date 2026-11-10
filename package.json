@@ -1,0 +1,16 @@
+{
+  "name": "or-meta-game",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test:load": "node test/load.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261109.1",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.76.0",
+    "ws": "^8.18.0"
+  }
+}

@@ -1,0 +1,20 @@
+name = "or-meta-game"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+
+[vars]
+STAGE_MS = "3000"
+
+[[durable_objects.bindings]]
+name = "GAME"
+class_name = "GameDO"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["GameDO"]
+
+[assets]
+directory = "./public"
+
+[dev]
+port = 8787
